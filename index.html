@@ -1,1 +1,1237 @@
-<!doctype html><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Keynote</title><meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,width=device-width"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body id="body" bgcolor="black"><div id="stageArea"><div id="stage" class="stage"></div><div id="hyperlinkPlane" class="stage"></div></div><div id="slideshowNavigator"></div><div id="slideNumberControl"></div><div id="slideNumberDisplay"></div><div id="helpPlacard"></div><div id="waitingIndicator"><div id="waitingSpinner"></div></div><script src="assets/player/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Константин Скудатин — 9 вопросов перед решением</title>
+<meta name="description" content="9 вопросов перед решением, которое изменит вашу жизнь. Константин Скудатин — эксперт Vysotsky Estate." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   PREMIUM REAL ESTATE — STYLE SYSTEM
+   Palette: Black / Graphite / Gold / Violet
+   ============================================ */
+
+:root {
+  --black: #0A0A0A;
+  --graphite: #1C1C1E;
+  --graphite-2: #2C2C2E;
+  --graphite-3: #3A3A3C;
+  --gold: #C9A961;
+  --gold-light: #E8C878;
+  --gold-dark: #8B6F3D;
+  --violet: #4A2C5A;
+  --violet-light: #6B3E7F;
+  --violet-deep: #2A1F33;
+  --violet-border: #7B4FA2;
+
+  --cream: #F5F1E8;
+  --text: #E8E4DC;
+  --text-muted: #9A958C;
+  --divider: rgba(201, 169, 97, 0.25);
+
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --page-padding: 18mm;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: #050505;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px; /* УВЕЛИЧЕНО с 14px */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--gold-light); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--gold); }
+
+/* ============================================
+   СТРАНИЦЫ
+   ============================================ */
+.page {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  padding: var(--page-padding);
+  margin: 20px auto;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,169,97,0.1);
+  page-break-after: always;
+  break-after: page;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 8mm;
+  border: 1px solid var(--divider);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+/* ============================================
+   СТРАНИЦА 1 — ОБЛОЖКА
+   ============================================ */
+.page-cover {
+  background:
+    radial-gradient(ellipse at top right, rgba(74,44,90,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at bottom left, rgba(201,169,97,0.12) 0%, transparent 50%),
+    linear-gradient(160deg, #0A0A0A 0%, #141018 50%, #0A0A0A 100%);
+}
+
+.cover-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 12mm;
+  min-height: calc(100% - 14mm);
+  position: relative;
+  z-index: 2;
+}
+
+.cover-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10mm;
+}
+
+.brand-icon { width: 36px; height: 36px; }
+
+.brand-name {
+  font-family: var(--font-sans);
+  font-size: 12px; /* УВЕЛИЧЕНО с 11px */
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.brand-accent { color: var(--gold); font-weight: 600; }
+
+.cover-subtitle {
+  font-family: var(--font-sans);
+  font-size: 12px; /* УВЕЛИЧЕНО с 11px */
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6mm;
+  font-weight: 500;
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: 40px; /* УВЕЛИЧЕНО с 34px */
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 8mm;
+  letter-spacing: -0.01em;
+}
+
+.cover-title em {
+  font-style: italic;
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+.cover-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8mm;
+  width: 140px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.divider-diamond { color: var(--gold); font-size: 10px; }
+
+.cover-role {
+  font-family: var(--font-serif);
+  font-size: 22px; /* УВЕЛИЧЕНО с 20px */
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 8mm;
+  font-weight: 400;
+}
+
+.cover-role em { color: var(--gold-light); font-style: italic; }
+
+.cover-tagline {
+  font-family: var(--font-serif);
+  font-size: 19px; /* УВЕЛИЧЕНО с 17px */
+  line-height: 1.55;
+  color: var(--cream);
+  margin-bottom: 5mm;
+  font-weight: 500;
+}
+
+.cover-philosophy {
+  font-size: 15px; /* УВЕЛИЧЕНО с 13px */
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 380px;
+}
+
+/* Аватар */
+.cover-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10mm;
+}
+
+.avatar-frame {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.avatar-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(123,79,162,0.35) 0%, transparent 70%);
+  filter: blur(25px);
+  z-index: 0;
+}
+
+.avatar-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--violet-border);
+  box-shadow:
+    0 0 0 8px rgba(10,10,10,0.95),
+    0 0 0 9px var(--divider),
+    0 20px 50px rgba(0,0,0,0.7);
+  z-index: 1;
+  background: var(--black);
+}
+
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Заглушка если фото не загрузилось */
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--violet-deep), var(--graphite));
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.cover-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px; /* УВЕЛИЧЕНО */
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  color: var(--text);
+  font-size: 15px; /* УВЕЛИЧЕНО с 13px */
+  transition: all .25s;
+}
+
+.contact-row:hover {
+  background: rgba(201,169,97,0.08);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.contact-icon {
+  width: 20px; /* УВЕЛИЧЕНО с 18px */
+  height: 20px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ============================================
+   ОБЩИЙ HEADER СТРАНИЦ
+   ============================================ */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12mm;
+  position: relative;
+  z-index: 2;
+}
+
+.page-number {
+  font-family: var(--font-display);
+  font-size: 16px; /* УВЕЛИЧЕНО с 14px */
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 36px; /* УВЕЛИЧЕНО с 30px */
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+
+.header-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent 80%);
+}
+
+/* ============================================
+   СТРАНИЦА 2 — 9 ВОПРОСОВ
+   ============================================ */
+.page-questions {
+  background:
+    radial-gradient(ellipse at top left, rgba(74,44,90,0.2) 0%, transparent 50%),
+    linear-gradient(180deg, #0A0A0A 0%, #12101A 100%);
+  padding-bottom: 28mm;
+}
+
+.questions-intro {
+  font-family: var(--font-serif);
+  font-size: 18px; /* УВЕЛИЧЕНО с 16px */
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 8mm;
+  padding: 4mm 6mm;
+  border-left: 2px solid var(--gold);
+  position: relative;
+  z-index: 2;
+}
+
+.questions-intro em { color: var(--gold-light); }
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5mm;
+  position: relative;
+  z-index: 2;
+}
+
+.question-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4mm;
+  align-items: start;
+  padding: 4mm 5mm;
+  background: linear-gradient(135deg, rgba(28,28,30,0.7), rgba(10,10,10,0.7));
+  border: 1px solid var(--divider);
+  border-left: 3px solid var(--gold);
+}
+
+.question-number {
+  font-family: var(--font-display);
+  font-size: 30px; /* УВЕЛИЧЕНО с 26px */
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  min-width: 36px;
+  padding-top: 2px;
+}
+
+.question-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+
+.question-text {
+  font-family: var(--font-serif);
+  font-size: 17px; /* УВЕЛИЧЕНО с 15px */
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.4;
+}
+
+.question-hint {
+  font-size: 13px; /* УВЕЛИЧЕНО с 11px */
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.question-input {
+  width: 100%;
+  min-height: 48px; /* УВЕЛИЧЕНО */
+  padding: 11px 14px; /* УВЕЛИЧЕНО */
+  background: rgba(10,10,10,0.6);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 15px; /* УВЕЛИЧЕНО с 13px */
+  line-height: 1.5;
+  resize: vertical;
+  transition: all .25s;
+  outline: none;
+}
+
+.question-input:focus {
+  border-color: var(--gold);
+  background: rgba(201,169,97,0.05);
+  box-shadow: 0 0 0 2px rgba(201,169,97,0.15);
+}
+
+.question-input::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.question-item.special {
+  border-left-color: var(--violet-border);
+  background: linear-gradient(135deg, rgba(74,44,90,0.15), rgba(10,10,10,0.7));
+}
+
+.question-item.special .question-number {
+  color: var(--violet-light);
+}
+
+/* ============================================
+   СТРАНИЦА 3 — ОБО МНЕ + ПОДХОД
+   ============================================ */
+.page-about {
+  background:
+    radial-gradient(ellipse at bottom right, rgba(201,169,97,0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at top left, rgba(74,44,90,0.18) 0%, transparent 50%),
+    linear-gradient(180deg, #0A0A0A 0%, #0F0C14 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10mm;
+  margin-bottom: 10mm;
+  position: relative;
+  z-index: 2;
+}
+
+.about-block {
+  padding: 8mm 7mm;
+  background: linear-gradient(145deg, rgba(28,28,30,0.9), rgba(10,10,10,0.9));
+  border: 1px solid var(--divider);
+}
+
+.about-block h3 {
+  font-family: var(--font-display);
+  font-size: 26px; /* УВЕЛИЧЕНО с 22px */
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 5mm;
+  padding-bottom: 3mm;
+  border-bottom: 1px solid var(--divider);
+}
+
+.about-block p {
+  font-family: var(--font-serif);
+  font-size: 18px; /* УВЕЛИЧЕНО с 16px */
+  line-height: 1.6;
+  color: var(--cream);
+}
+
+.about-block p em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.about-quote {
+  position: relative;
+  padding: 8mm 10mm;
+  background: linear-gradient(135deg, rgba(74,44,90,0.15), rgba(201,169,97,0.05));
+  border: 1px solid var(--divider);
+  text-align: center;
+  margin-bottom: 10mm;
+  z-index: 2;
+}
+
+.quote-mark {
+  width: 32px;
+  height: 32px;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-bottom: 4mm;
+}
+
+.about-quote p {
+  font-family: var(--font-serif);
+  font-size: 20px; /* УВЕЛИЧЕНО с 18px */
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--cream);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.about-quote p em { color: var(--gold-light); font-style: italic; }
+
+.cta-block {
+  text-align: center;
+  padding: 8mm;
+  background: linear-gradient(135deg, rgba(201,169,97,0.08), rgba(74,44,90,0.08));
+  border: 1px solid var(--gold);
+  position: relative;
+  z-index: 2;
+}
+
+.cta-block h3 {
+  font-family: var(--font-display);
+  font-size: 26px; /* УВЕЛИЧЕНО с 22px */
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 4mm;
+}
+
+.cta-block p {
+  font-size: 16px; /* УВЕЛИЧЕНО с 14px */
+  color: var(--text-muted);
+  margin-bottom: 6mm;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 32px; /* УВЕЛИЧЕНО */
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-size: 14px; /* УВЕЛИЧЕНО с 13px */
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all .25s;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+}
+
+/* ============================================
+   СТРАНИЦА 4 — КОНТАКТЫ + QR
+   ============================================ */
+.page-contacts {
+  background:
+    radial-gradient(ellipse at center, rgba(74,44,90,0.2) 0%, transparent 60%),
+    linear-gradient(180deg, #0A0A0A 0%, #141018 100%);
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 12mm;
+  position: relative;
+  z-index: 2;
+}
+
+.contacts-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contacts-lead {
+  font-family: var(--font-serif);
+  font-size: 22px; /* УВЕЛИЧЕНО с 20px */
+  line-height: 1.55;
+  color: var(--cream);
+  margin-bottom: 10mm;
+  font-weight: 400;
+}
+
+.contacts-lead strong { color: var(--gold-light); font-weight: 600; }
+
+.contacts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 10mm;
+}
+
+.contacts-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px; /* УВЕЛИЧЕНО */
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--divider);
+  transition: all .25s;
+}
+
+.contacts-list li:hover {
+  background: rgba(201,169,97,0.06);
+  border-color: var(--gold);
+}
+
+.contact-icon-lg {
+  width: 26px; /* УВЕЛИЧЕНО с 24px */
+  height: 26px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.contact-label {
+  display: block;
+  font-size: 11px; /* УВЕЛИЧЕНО с 10px */
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.contact-value {
+  font-size: 16px; /* УВЕЛИЧЕНО с 14px */
+  color: var(--cream);
+  font-weight: 500;
+}
+
+.final-quote {
+  font-family: var(--font-serif);
+  font-size: 19px; /* УВЕЛИЧЕНО с 17px */
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--cream);
+  padding: 6mm;
+  border-left: 2px solid var(--gold);
+  background: rgba(201,169,97,0.05);
+}
+
+.final-quote em { color: var(--gold-light); }
+
+/* QR */
+.contacts-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8mm;
+}
+
+.qr-wrapper { text-align: center; }
+
+.qr-frame {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  padding: 14px;
+  background: #FFFFFF;
+  margin: 0 auto;
+}
+
+.qr-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gold);
+}
+
+.qr-corner.tl { top: -4px; left: -4px; border-right: none; border-bottom: none; }
+.qr-corner.tr { top: -4px; right: -4px; border-left: none; border-bottom: none; }
+.qr-corner.bl { bottom: -4px; left: -4px; border-right: none; border-top: none; }
+.qr-corner.br { bottom: -4px; right: -4px; border-left: none; border-top: none; }
+
+.qr-image { width: 100%; height: 100%; display: block; }
+
+.qr-caption {
+  margin-top: 6mm;
+  font-family: var(--font-serif);
+  font-size: 16px; /* УВЕЛИЧЕНО с 14px */
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.signature-block {
+  text-align: center;
+  padding-top: 6mm;
+}
+
+.signature-line {
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 5mm;
+}
+
+.signature-name {
+  font-family: var(--font-display);
+  font-size: 24px; /* УВЕЛИЧЕНО с 20px */
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 2px;
+}
+
+.signature-role {
+  font-size: 12px; /* УВЕЛИЧЕНО с 11px */
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  margin-bottom: 2mm;
+}
+
+.signature-values {
+  font-size: 11px; /* УВЕЛИЧЕНО с 10px */
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ============================================
+   КНОПКА ПЕЧАТИ
+   ============================================ */
+.print-button-wrapper {
+  text-align: center;
+  padding: 10mm 0 4mm;
+  position: relative;
+  z-index: 2;
+}
+
+.print-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 40px; /* УВЕЛИЧЕНО */
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-size: 15px; /* УВЕЛИЧЕНО с 14px */
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all .25s;
+  box-shadow: 0 10px 30px rgba(201,169,97,0.3);
+}
+
+.print-button:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(201,169,97,0.4);
+}
+
+.print-button svg { width: 22px; height: 22px; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.page-footer {
+  position: absolute;
+  bottom: 8mm;
+  left: var(--page-padding);
+  right: var(--page-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px; /* УВЕЛИЧЕНО с 9px */
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.footer-center { color: var(--gold); font-size: 9px; }
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+@media (max-width: 820px) {
+  :root { --page-padding: 7mm; }
+
+  .page {
+    width: 100%;
+    height: auto !important;
+    min-height: auto;
+    margin: 0;
+    padding: 24px 20px;
+    box-shadow: none;
+    border-bottom: 1px solid var(--divider);
+    page-break-after: auto;
+  }
+
+  .page::before { inset: 12px; }
+
+  .cover-grid,
+  .about-grid,
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 8mm;
+  }
+
+  .cover-right { order: -1; }
+
+  .cover-title { font-size: 32px; }
+  .cover-role { font-size: 20px; }
+  .cover-tagline { font-size: 18px; }
+
+  .avatar-frame { width: 220px; height: 220px; }
+
+  .page-title { font-size: 28px; }
+
+  .question-item {
+    grid-template-columns: 1fr;
+    gap: 3mm;
+  }
+
+  .question-number { font-size: 26px; }
+
+  .qr-frame { width: 180px; height: 180px; }
+
+  .page-footer {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-top: 10mm;
+    padding-top: 5mm;
+    border-top: 1px solid var(--divider);
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cover-title { font-size: 28px; }
+  .brand-name { font-size: 10px; letter-spacing: 0.25em; }
+  .contact-row { font-size: 14px; padding: 10px 12px; }
+  .question-text { font-size: 16px; }
+}
+
+/* ============================================
+   ПЕЧАТЬ / ЭКСПОРТ В PDF
+   ============================================ */
+@media print {
+  html, body { background: #fff; }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    page-break-after: always;
+    break-after: page;
+    overflow: hidden;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  .print-button-wrapper { display: none !important; }
+
+  .question-input {
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #000;
+    min-height: 40px;
+    page-break-inside: avoid;
+  }
+
+  .question-input::placeholder { color: transparent; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ СТРАНИЦА 1: ОБЛОЖКА ============ -->
+<section class="page page-cover" id="page-1">
+  <div class="cover-grid">
+    <div class="cover-left">
+      <div class="brand-mark">
+        <svg viewBox="0 0 40 40" class="brand-icon" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#E8C878"/>
+              <stop offset="50%" stop-color="#C9A961"/>
+              <stop offset="100%" stop-color="#8B6F3D"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L38 12 L38 28 L20 38 L2 28 L2 12 Z" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <path d="M20 10 L30 16 L30 26 L20 32 L10 26 L10 16 Z" fill="url(#goldGrad)" opacity="0.15"/>
+          <text x="20" y="25" text-anchor="middle" font-family="Playfair Display" font-size="12" font-weight="700" fill="url(#goldGrad)">V</text>
+        </svg>
+        <span class="brand-name">VYSOTSKY <span class="brand-accent">ESTATE</span></span>
+      </div>
+
+      <p class="cover-subtitle">9 вопросов перед решением</p>
+
+      <h1 class="cover-title">
+        Решение, которое<br/>
+        <em>изменит вашу жизнь</em>
+      </h1>
+
+      <div class="cover-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond">◆</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <p class="cover-role">Константин Скудатин — эксперт в <em>Vysotsky Estate</em></p>
+
+      <p class="cover-tagline">
+        Помогаю людям принимать дорогие решения<br/>
+        и думать дороже.
+      </p>
+
+      <p class="cover-philosophy">
+        Соединяю эмоции и факты, чтобы выбор был осознанным,<br/>
+        а последствия — управляемыми.
+      </p>
+    </div>
+
+    <div class="cover-right">
+      <div class="avatar-frame">
+        <div class="avatar-glow"></div>
+        <div class="avatar-inner">
+          <!-- ФОТО с проверкой имени файла -->
+          <img
+            src="avatar.jpg"
+            alt="Константин Скудатин"
+            class="avatar-photo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Заглушка если фото не загрузилось -->
+          <div class="avatar-placeholder" style="display:none;">КС</div>
+        </div>
+      </div>
+
+      <div class="cover-contacts">
+        <a href="tel:+79777145325" class="contact-row">
+          <svg viewBox="0 0 24 24" class="contact-icon" aria-hidden="true">
+            <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.07 15.07 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z" fill="currentColor"/>
+          </svg>
+          <span>+7 (977) 714-53-25</span>
+        </a>
+        <a href="https://t.me/konstantin.skudatin" class="contact-row">
+          <svg viewBox="0 0 24 24" class="contact-icon" aria-hidden="true">
+            <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" fill="currentColor"/>
+          </svg>
+          <span>@konstantin.skudatin</span>
+        </a>
+        <a href="mailto:skudatin@gmail.com" class="contact-row">
+          <svg viewBox="0 0 24 24" class="contact-icon" aria-hidden="true">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+          </svg>
+          <span>skudatin@gmail.com</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">VYSOTSKY ESTATE</span>
+    <span class="footer-center">◆</span>
+    <span class="footer-right">ПРЕМИАЛЬНАЯ НЕДВИЖИМОСТЬ</span>
+  </div>
+</section>
+
+
+<!-- ============ СТРАНИЦА 2: 9 ВОПРОСОВ ============ -->
+<section class="page page-questions" id="page-2">
+  <header class="page-header">
+    <span class="page-number">02</span>
+    <h2 class="page-title">9 вопросов</h2>
+    <div class="header-line"></div>
+  </header>
+
+  <p class="questions-intro">
+    Это не тест. Нет правильных и неправильных ответов.<br/>
+    <em>Честность с собой — первый шаг к верному решению.</em>
+  </p>
+
+  <div class="questions-list">
+    <div class="question-item">
+      <div class="question-number">01</div>
+      <div class="question-content">
+        <p class="question-text">Какую цель я пытаюсь достичь?</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-number">02</div>
+      <div class="question-content">
+        <p class="question-text">Что будет, если я ничего не сделаю?</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-number">03</div>
+      <div class="question-content">
+        <p class="question-text">Что я хочу?</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-number">04</div>
+      <div class="question-content">
+        <p class="question-text">Чего я боюсь?</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-number">05</div>
+      <div class="question-content">
+        <p class="question-text">Какие последствия у каждого варианта?</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-number">06</div>
+      <div class="question-content">
+        <p class="question-text">Какое решение соответствует моим ценностям?</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-number">07</div>
+      <div class="question-content">
+        <p class="question-text">Что бы я посоветовал другу на моём месте?</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+
+    <div class="question-item special">
+      <div class="question-number">08</div>
+      <div class="question-content">
+        <p class="question-text">Что должно быть правдой, чтобы это решение оказалось хорошим?</p>
+        <p class="question-hint">Определите ключевые допущения. Что должно сложиться, случиться или измениться, чтобы вариант решения дал желаемый результат — это важный сигнал.</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+
+    <div class="question-item special">
+      <div class="question-number">09</div>
+      <div class="question-content">
+        <p class="question-text">Смогу ли я принять последствия этого решения?</p>
+        <p class="question-hint">Самый честный вопрос. Готовы ли вы взять на себя ответственность за возможные последствия этого выбора? Если нет — возможно, стоит пересмотреть решение.</p>
+        <textarea class="question-input" placeholder="Ваш ответ..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">КОНСТАНТИН СКУДАТИН</span>
+    <span class="footer-center">◆</span>
+    <span class="footer-right">9 ВОПРОСОВ</span>
+  </div>
+</section>
+
+
+<!-- ============ СТРАНИЦА 3: ОБО МНЕ + ПОДХОД ============ -->
+<section class="page page-about" id="page-3">
+  <header class="page-header">
+    <span class="page-number">03</span>
+    <h2 class="page-title">Обо мне</h2>
+    <div class="header-line"></div>
+  </header>
+
+  <div class="about-grid">
+    <div class="about-block">
+      <h3>Опыт</h3>
+      <p>
+        С 2008 года в сделках и переговорах. Работал в крупных агентствах недвижимости.
+        Сейчас — эксперт в <em>Vysotsky Estate</em>.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h3>Подход</h3>
+      <p>
+        Помогаю людям принимать дорогие решения и думать дороже.
+        Соединяю эмоции и факты, чтобы выбор был осознанным, а последствия — управляемыми.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-quote">
+    <svg viewBox="0 0 24 24" class="quote-mark" aria-hidden="true">
+      <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/>
+    </svg>
+    <p>
+      «Бездействие тоже решение. Просто последствия приходят позже.»<br/>
+      <em>Выбор всегда за тобой.</em>
+    </p>
+  </div>
+
+  <div class="cta-block">
+    <h3>Нужна помощь в принятии решения?</h3>
+    <p>
+      Запишитесь на консультацию — разберём вашу ситуацию.<br/>
+      Первая сессия — стратегическая, без продаж.
+    </p>
+    <a href="https://t.me/konstantin.skudatin" class="cta-button">Записаться на консультацию</a>
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">VYSOTSKY ESTATE</span>
+    <span class="footer-center">◆</span>
+    <span class="footer-right">ОБО МНЕ</span>
+  </div>
+</section>
+
+
+<!-- ============ СТРАНИЦА 4: КОНТАКТЫ + QR ============ -->
+<section class="page page-contacts" id="page-4">
+  <header class="page-header">
+    <span class="page-number">04</span>
+    <h2 class="page-title">Контакты</h2>
+    <div class="header-line"></div>
+  </header>
+
+  <div class="contacts-grid">
+    <div class="contacts-left">
+      <p class="contacts-lead">
+        Помните: нет идеальных решений. Есть решения, за которые вы готовы принять ответственность.
+      </p>
+
+      <ul class="contacts-list">
+        <li>
+          <svg viewBox="0 0 24 24" class="contact-icon-lg" aria-hidden="true">
+            <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.07 15.07 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z" fill="currentColor"/>
+          </svg>
+          <div>
+            <span class="contact-label">Телефон</span>
+            <a href="tel:+79777145325" class="contact-value">+7 (977) 714-53-25</a>
+          </div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" class="contact-icon-lg" aria-hidden="true">
+            <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" fill="currentColor"/>
+          </svg>
+          <div>
+            <span class="contact-label">Telegram</span>
+            <a href="https://t.me/konstantin.skudatin" class="contact-value">@konstantin.skudatin</a>
+          </div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" class="contact-icon-lg" aria-hidden="true">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+          </svg>
+          <div>
+            <span class="contact-label">E-mail</span>
+            <a href="mailto:skudatin@gmail.com" class="contact-value">skudatin@gmail.com</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="final-quote">
+        «Смотрите дальше. Хорошее решение — то, что ведёт к нужным последствиям.»
+      </div>
+    </div>
+
+    <div class="contacts-right">
+      <div class="qr-wrapper">
+        <div class="qr-frame">
+          <div class="qr-corner tl"></div>
+          <div class="qr-corner tr"></div>
+          <div class="qr-corner bl"></div>
+          <div class="qr-corner br"></div>
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Ft.me%2Fkonstantin.skudatin&color=0A0A0A&bgcolor=FFFFFF&margin=8"
+            alt="QR-код для связи с Константином Скудатиным в Telegram"
+            class="qr-image"
+          />
+        </div>
+        <p class="qr-caption">
+          Наведите камеру —<br/>
+          напишете мне в Telegram
+        </p>
+      </div>
+
+      <div class="signature-block">
+        <div class="signature-line"></div>
+        <p class="signature-name">Константин Скудатин</p>
+        <p class="signature-role">Эксперт Vysotsky Estate</p>
+        <p class="signature-values">✧ честность  факты ✧ эмоции ✧</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- КНОПКА ПЕЧАТИ -->
+  <div class="print-button-wrapper">
+    <button class="print-button" onclick="window.print()">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" fill="currentColor"/>
+      </svg>
+      Напечатать / Сохранить PDF
+    </button>
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">© 2026 VYSOTSKY ESTATE</span>
+    <span class="footer-center">◆</span>
+    <span class="footer-right">КОНСТАНТИН СКУДАТИН</span>
+  </div>
+</section>
+
+</body>
+</html>
